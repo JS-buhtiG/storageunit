@@ -1,7 +1,12 @@
 [
   {
-    "folder": "cabinet1",
+    "page": "artfight",
     "shelf": 1,
     "slot": 1
+  },
+  {
+    "page": "credits",
+    "shelf": 1,
+    "slot": 2
   }
 ]

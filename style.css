@@ -375,7 +375,7 @@ html, body {
     font-weight: bold;
 }
 #window-content > * {
-    max-width: 750px;
+    max-width: 615px;
 }
 .folder{
     border:2px solid white;
@@ -413,4 +413,8 @@ html, body {
 .menu-button:hover {
     background: white;
     color: black;
+}
+
+.blazier_img {
+    width: 630px;
 }

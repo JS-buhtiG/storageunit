@@ -31,6 +31,12 @@ registerPage("cabinet1", {
 // ArtFight
 
 const artfight = makeMenu();
+artfight.appendChild(
+    makeMenuButton(
+        "<< BACK",
+        () => openPage("cabinet1")
+    )
+);
 
 artfight.appendChild(
     makeMenuButton(
@@ -50,8 +56,15 @@ const blazier = makeMenu();
 
 blazier.appendChild(
     makeMenuButton(
+        "<< BACK",
+        () => openPage("cabinet1/artfight")
+    )
+);
+
+blazier.appendChild(
+    makeMenuButton(
         "REFERENCE IMAGE",
-        () => alert("later")
+        () => openPage("cabinet1/artfight/blazier/image")
     )
 );
 
@@ -65,4 +78,27 @@ blazier.appendChild(
 registerPage("cabinet1/artfight/blazier", {
     title: "BLAZIER CINDERHAND",
     html: blazier
+});
+
+// Blazier's image
+
+const blazier_img = makeMenu();
+
+blazier_img.appendChild(
+    makeMenuButton(
+        "<< BACK",
+        () => openPage("cabinet1/artfight/blazier")
+    )
+);
+
+blazier_img.insertAdjacentHTML("beforeend",
+    `
+    <h2>Image Viewer: storage/artfight/blazier/img.png</h2>
+    <img src="storage/artfight/blazier/img.png" alt="img.png">
+    `
+)
+
+registerPage("cabinet1/artfight/blazier/image", {
+    title: "BLAZIER CINDERHAND - img.png",
+    html: blazier_img
 });
