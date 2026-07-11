@@ -1,20 +1,12 @@
-// ============================================================
-// CONFIG — tweak these
-// ============================================================
-
-// The winning combination (three digits, 0-9 each).
+// Combination
 const TARGET_CODE = [1, 9, 9];
 
-// Dial art color, randomized each page load. Drop your assets in
-// /assets as "dial-strip-gold.png" and "dial-strip-silver.png" —
-// each one a single vertical strip with digits 0-9 stacked evenly
-// top to bottom ("big strip including all numbers" from the pack).
+// Racism
 const DIAL_COLORS = ['gold', 'silver', 'silver', 'silver', 'silver', 'silver', 'silver'];
 const chosenColor = DIAL_COLORS[Math.floor(Math.random() * DIAL_COLORS.length)];
 
-// ============================================================
+
 // State
-// ============================================================
 const digits = [0, 0, 0];
 const dialEls = [0, 1, 2].map(i => document.getElementById(`dial-${i}`));
 const stripEls = dialEls.map(dial => dial.querySelector('.dial-strip'));
@@ -29,9 +21,10 @@ function updateDial(i) {
 }
 digits.forEach((_, i) => updateDial(i));
 
-// ============================================================
-// Interaction — top of dial scrolls up, bottom scrolls down
-// ============================================================
+
+// Interaction
+// top of dial scrolls up, bottom scrolls down
+
 document.querySelectorAll('.zone-up').forEach(zone => {
     zone.addEventListener('click', () => {
         const i = Number(zone.dataset.dial);
@@ -54,9 +47,7 @@ function checkCombo() {
     if (digits.every((d, i) => d === TARGET_CODE[i])) unlock();
 }
 
-// ============================================================
-// Unlock sequence: lock fades → door drops in → door rolls up
-// ============================================================
+// door
 function unlock() {
     const lockScreen = document.getElementById('lock-screen');
     const door = document.getElementById('garage-door');
@@ -65,9 +56,7 @@ function unlock() {
     setTimeout(() => door.classList.add('open'), 500);
 }
 
-// ============================================================
-// Shelf rendering — slider controls 1 to 3 active shelves
-// ============================================================
+// Shelf rendering + slider
 const BUTTONS_PER_SHELF = 6;
 const activeShelvesContainer = document.getElementById('active-shelves');
 const shelfSlider = document.getElementById('shelf-count');
