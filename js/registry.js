@@ -1,3 +1,5 @@
+// noinspection ExceptionCaughtLocallyJS
+
 async function buildDirectory(pageId, fetchPath) {
     try {
         const response = await fetch(`${fetchPath}/order.json`);
@@ -8,6 +10,17 @@ async function buildDirectory(pageId, fetchPath) {
 
         const data = await response.json();
         const menu = makeMenu();
+
+        if (pageId.includes('/')) {
+            const parentId = pageId.substring(0, pageId.lastIndexOf('/'));
+            const backBtn = makeMenuButton("<< BACK", () => {
+                openPage(parentId);
+            });
+            backBtn.style.color = "#888";
+            backBtn.style.borderColor = "#888";
+            menu.appendChild(backBtn);
+        }
+        // --------------------------------------
 
         for (const entry of data.entries) {
             const targetId = `${pageId}/${entry.target}`;
@@ -50,7 +63,6 @@ async function buildDirectory(pageId, fetchPath) {
 
 async function initRegistry() {
     try {
-        // Clear out the hardcoded defaults
         for (const key in storageMap) {
             delete storageMap[key];
         }
@@ -68,7 +80,6 @@ async function initRegistry() {
     } catch (err) {
         console.error("Critical Registry Error:", err);
     } finally {
-        // Always render the shelves, even if the fetch fails
         if (typeof shelfSlider !== 'undefined') {
             renderActiveShelves(Number(shelfSlider.value));
         }
