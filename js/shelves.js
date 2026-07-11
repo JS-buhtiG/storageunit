@@ -1,6 +1,6 @@
 const BUTTONS_PER_SHELF = 6;
 // Define the texture classes we will create in CSS
-const BOX_TEXTURES = ['box-texture-1', 'box-texture-2', 'box-texture-3'];
+const BOX_TEXTURES = ['cabinet_drawer.png'];
 
 const activeShelvesContainer = document.getElementById("active-shelves");
 const shelfSlider = document.getElementById("shelf-count");
