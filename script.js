@@ -49,9 +49,10 @@ function checkCombo() {
 
 // door
 function unlock() {
+    const openSound = new Audio('assets/sounds/open.mp3')
+    openSound.play();
     const lockScreen = document.getElementById('lock-screen');
     const door = document.getElementById('garage-door');
-
     lockScreen.classList.add('hidden');
     setTimeout(() => door.classList.add('open'), 500);
 }
@@ -81,6 +82,7 @@ function renderActiveShelves(count) {
             btn.className = 'empty-btn';
             btn.addEventListener('click', () => {
                 console.log(`Shelf ${s + 1}, button ${i + 1} clicked — hook up its behavior here.`);
+                playCardboardSound()
             });
             grid.appendChild(btn);
         }
@@ -96,3 +98,16 @@ shelfSlider.addEventListener('input', () => {
     shelfCountLabel.textContent = shelfSlider.value;
     renderActiveShelves(Number(shelfSlider.value));
 });
+
+const soundEffects = [
+    'assets/sounds/oxidvideos-cardboard-box-close-182562.mp3',
+    'assets/sounds/oxidvideos-cardboard-box-open-182560.mp3',
+    'assets/sounds/oxidvideos-dropping-cardboard-box-453026.mp3'
+];
+
+function playCardboardSound() {
+    const randomIndex = Math.floor(Math.random() * soundEffects.length);
+    const selectedSound = soundEffects[randomIndex];
+    const cardboardSound = new Audio(selectedSound);
+    cardboardSound.play();
+}
