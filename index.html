@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STORAGE UNIT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="lock-screen">
+    <a class="credit" href="https://mumeinano.itch.io/" target="_blank" rel="noopener noreferrer">Combo Lock textures by MumeiNano</a>
+
+    <div class="lock-container">
+        <div class="dial" id="dial-0">
+            <div class="dial-strip"></div>
+            <div class="zone zone-up" data-dial="0"></div>
+            <div class="zone zone-down" data-dial="0"></div>
+        </div>
+        <div class="dial" id="dial-1">
+            <div class="dial-strip"></div>
+            <div class="zone zone-up" data-dial="1"></div>
+            <div class="zone zone-down" data-dial="1"></div>
+        </div>
+        <div class="dial" id="dial-2">
+            <div class="dial-strip"></div>
+            <div class="zone zone-up" data-dial="2"></div>
+            <div class="zone zone-down" data-dial="2"></div>
+        </div>
+    </div>
+</div>
+
+<div id="garage-door"></div>
+
+<div id="button-room">
+    <div class="unit-header">
+        <h1 class="unit-title">STORAGE UNIT #199</h1>
+        <p class="unit-subtitle">by Cndtnl_Cognition</p>
+    </div>
+
+    <div class="floor"></div>
+
+    <div class="shelf-row">
+        <div class="shelf-frame shelf-empty">
+            <div class="shelf-mid-post"></div>
+        </div>
+        <div class="shelf-frame shelf-empty">
+            <div class="shelf-mid-post"></div>
+        </div>
+
+        <button class="expand-arrow arrow-left" disabled aria-label="Expand storage left">&#8592;</button>
+
+        <div class="active-shelves" id="active-shelves"></div>
+
+        <button class="expand-arrow arrow-right" disabled aria-label="Expand storage right">&#8594;</button>
+
+        <div class="shelf-frame shelf-empty">
+            <div class="shelf-mid-post"></div>
+        </div>
+        <div class="shelf-frame shelf-empty">
+            <div class="shelf-mid-post"></div>
+        </div>
+    </div>
+
+    <div class="shelf-slider-wrap">
+        <label for="shelf-count" class="shelf-slider-label">SHELVES: <span id="shelf-count-value">2</span></label>
+        <input type="range" id="shelf-count" min="1" max="3" value="2" step="1">
+    </div>
+
+    <div class="popup-row">
+        <button class="hud-panel" id="panel-c">
+            <span class="hud-label">OTHER_SITES</span>
+        </button>
+        <button class="hud-panel" id="panel-d">
+            <span class="hud-label">INFO_CREDITS</span>
+        </button>
+        <button class="hud-panel" id="panel-e">
+            <span class="hud-label">ANYTH_ELSE</span>
+        </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
