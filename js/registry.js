@@ -16,8 +16,8 @@ async function buildDirectory(pageId, fetchPath) {
             const backBtn = makeMenuButton("<< BACK", () => {
                 openPage(parentId);
             });
-            backBtn.style.color = "#888";
-            backBtn.style.borderColor = "#888";
+            backBtn.style.color = "#ffffff";
+            backBtn.style.borderColor = "#ffffff";
             menu.appendChild(backBtn);
         }
         // --------------------------------------
