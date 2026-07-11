@@ -5,6 +5,7 @@ registerPage("credits", {
     html: `
 <h2>Credits</h2>
 <p>Programming: Cndtnl_Cognition</p>
+<p>Lock Textures: NumeiNano</p>
 `
 });
 
