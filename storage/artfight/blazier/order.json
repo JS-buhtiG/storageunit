@@ -2,12 +2,20 @@
   "title": "BLAZIER CINDERHAND",
   "entries": [
     {
-      "title": "REFERENCE IMAGE",
+      "title": "PERSONALITY",
+      "target": "info.html"
+    },
+    {
+      "title": "PICTURE 1",
       "target": "img.png"
     },
     {
-      "title": "PERSONALITY",
-      "target": "info.html"
+      "title": "PICTURE 2",
+      "target": "img_1.png"
+    },
+    {
+      "title": "PICTURE 3",
+      "target": "img_2.png"
     }
   ]
 }
