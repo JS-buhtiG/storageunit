@@ -1,0 +1,29 @@
+{
+  "title": "CARTER SOLDERSMITH",
+  "entries": [
+    {
+      "title": "INFORMATION",
+      "target": "info.html"
+    },
+    {
+      "title": "PICTURE 1",
+      "target": "img.png"
+    },
+    {
+      "title": "PICTURE 2",
+      "target": "img_1.png"
+    },
+    {
+      "title": "PICTURE 3",
+      "target": "img_2.png"
+    },
+    {
+      "title": "PICTURE 4",
+      "target": "img_3.png"
+    },
+    {
+      "title": "PICTURE 5",
+      "target": "img_4.png"
+    }
+  ]
+}

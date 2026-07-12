@@ -52,7 +52,7 @@ async function buildDirectory(pageId, fetchPath) {
                     const img = document.createElement('img');
                     img.src = targetUrl;
                     if (entry.target === 'img.png') {
-                        img.className = 'blazier_img';
+                        img.className = 'character_img';
                     }
                     openWindow(entry.title, wrapWithBack(pageId, img));
                 } else if (/\.html$/i.test(entry.target)) {

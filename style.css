@@ -420,6 +420,9 @@ html, body {
     color: black;
 }
 
-.blazier_img {
+.character_img {
     width: 630px;
+}
+.timestamp {
+    font-family: Consolas, ui-monospace;
 }
