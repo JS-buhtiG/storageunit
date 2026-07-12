@@ -1,5 +1,26 @@
 // noinspection ExceptionCaughtLocallyJS
 
+function wrapWithBack(pageId, content) {
+    const wrapper = document.createElement('div');
+
+    const backBtn = makeMenuButton("<< BACK", () => {
+        openPage(pageId);
+    });
+    backBtn.style.color = "#ffffff";
+    backBtn.style.borderColor = "#ffffff";
+    wrapper.appendChild(backBtn);
+
+    if (typeof content === 'string') {
+        const contentDiv = document.createElement('div');
+        contentDiv.innerHTML = content;
+        wrapper.appendChild(contentDiv);
+    } else {
+        wrapper.appendChild(content);
+    }
+
+    return wrapper;
+}
+
 async function buildDirectory(pageId, fetchPath) {
     try {
         const response = await fetch(`${fetchPath}/order.json`);
@@ -33,13 +54,13 @@ async function buildDirectory(pageId, fetchPath) {
                     if (entry.target === 'img.png') {
                         img.className = 'blazier_img';
                     }
-                    openWindow(entry.title, img);
+                    openWindow(entry.title, wrapWithBack(pageId, img));
                 } else if (/\.html$/i.test(entry.target)) {
                     try {
                         const res = await fetch(targetUrl);
                         if (res.ok) {
                             const html = await res.text();
-                            openWindow(entry.title, html);
+                            openWindow(entry.title, wrapWithBack(pageId, html));
                         }
                     } catch (err) {
                         console.error(`Failed to load HTML: ${targetUrl}`, err);
