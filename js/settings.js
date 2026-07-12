@@ -11,7 +11,9 @@ const DEFAULT_SETTINGS = {
 async function loadSettings() {
     try {
         const res = await fetch('settings.json');
-        if (!res.ok) throw new Error('Could not fetch settings.json');
+        if (!res.ok) { // noinspection ExceptionCaughtLocallyJS
+            throw new Error('Could not fetch settings.json');
+        }
         settings = await res.json();
     } catch (err) {
         console.warn('Settings load failed, using defaults:', err);
