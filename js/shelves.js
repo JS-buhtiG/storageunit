@@ -1,5 +1,4 @@
 const BUTTONS_PER_SHELF = 6;
-// Define the texture classes we will create in CSS
 const BOX_TEXTURES = ['cabinet_drawer.png'];
 
 const activeShelvesContainer = document.getElementById("active-shelves");
@@ -27,15 +26,28 @@ function renderActiveShelves(count) {
             const btn = document.createElement("button");
             btn.className = "empty-btn";
 
-            // --- Apply a random texture class to EVERY button ---
-            const randomTexture = BOX_TEXTURES[Math.floor(Math.random() * BOX_TEXTURES.length)];
-            btn.classList.add(randomTexture);
-            // ----------------------------------------------------
-
             const key = `${shelfNum}-${slotNum}`;
+            const meta = slotMeta[key];
+
+            if (meta && meta.texture) {
+                // Specific override texture, assigned via layout.json + stored in assets/textures/special/
+                btn.style.backgroundImage = `url('assets/textures/special/${meta.texture}')`;
+            } else {
+                // No specific texture assigned — pick a random one from the generic pool.
+                const randomTexture = BOX_TEXTURES[Math.floor(Math.random() * BOX_TEXTURES.length)];
+                btn.style.backgroundImage = `url('assets/textures/${randomTexture}')`;
+            }
 
             if (storageMap[key]) {
                 btn.classList.add("occupied-btn");
+
+                if (meta && meta.colour) {
+                    btn.style.borderColor = meta.colour;
+                    btn.style.boxShadow = `0 3px 0 rgba(0,0,0,0.5), 0 0 10px ${meta.colour}66`;
+                }
+                if (meta && meta.name) {
+                    btn.title = meta.name;
+                }
             }
 
             btn.onclick = () => {

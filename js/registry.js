@@ -66,6 +66,9 @@ async function initRegistry() {
         for (const key in storageMap) {
             delete storageMap[key];
         }
+        for (const key in slotMeta) {
+            delete slotMeta[key];
+        }
 
         const layoutRes = await fetch('storage/layout.json');
         if (!layoutRes.ok) throw new Error("Could not fetch layout.json");
@@ -73,7 +76,25 @@ async function initRegistry() {
         const layoutData = await layoutRes.json();
 
         for (const item of layoutData) {
-            storageMap[`${item.shelf}-${item.slot}`] = item.page;
+            const key = `${item.shelf}-${item.slot}`;
+            storageMap[key] = item.page;
+
+            const meta = { texture: item.texture || null, colour: null, icon: null, name: null };
+
+            try {
+                const cabinetRes = await fetch(`storage/${item.page}/cabinet.json`);
+                if (cabinetRes.ok) {
+                    const cabinet = await cabinetRes.json();
+                    meta.colour = cabinet.colour || null;
+                    meta.icon = cabinet.icon || null;
+                    meta.name = cabinet.name || null;
+                }
+            } catch (err) {
+                // No cabinet.json for this page — that's fine, it's optional.
+            }
+
+            slotMeta[key] = meta;
+
             await buildDirectory(item.page, `storage/${item.page}`);
         }
 

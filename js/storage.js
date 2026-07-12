@@ -1,7 +1,5 @@
-const storageMap = {
-    "1-1": "cabinet1",
-    "1-2": "credits"
-};
+const storageMap = {};
+const slotMeta = {};
 
 function handleShelfClick(shelf, slot) {
     const key = `${shelf}-${slot}`;

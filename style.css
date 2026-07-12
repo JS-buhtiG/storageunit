@@ -208,11 +208,13 @@ html, body {
     width: 90px;
     height: 90px;
     border: 2px solid #444;
-    background: #1f1f1f;
+    background-color: #1f1f1f;
+    background-size: cover;
+    background-position: center;
     border-radius: 6px;
     cursor: pointer;
     box-shadow: 0 3px 0 rgba(0,0,0,0.5);
-    transition: background 0.2s ease, transform 0.1s ease;
+    transition: background 0.2s ease, transform 0.1s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .empty-btn:hover {
     background: #2c2c2c;
@@ -221,6 +223,9 @@ html, body {
 .empty-btn:active {
     transform: translateY(0);
     box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+.occupied-btn {
+    border-color: #888;
 }
 
 .expand-arrow {
