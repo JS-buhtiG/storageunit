@@ -32,6 +32,9 @@ function renderActiveShelves(count) {
             if (meta && meta.texture) {
                 // Specific override texture, assigned via layout.json + stored in assets/textures/special/
                 btn.style.backgroundImage = `url('assets/textures/special/${meta.texture}')`;
+                btn.style.backgroundSize = '100% auto';
+                btn.style.backgroundPosition = 'bottom center';
+                btn.style.backgroundRepeat = 'no-repeat';
             } else {
                 // No specific texture assigned — pick a random one from the generic pool.
                 const randomTexture = BOX_TEXTURES[Math.floor(Math.random() * BOX_TEXTURES.length)];
