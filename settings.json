@@ -9,11 +9,13 @@
   },
   "links": {
     "otherSites": [
-      { "title": "MumeiNano (itch.io)", "url": "https://mumeinano.itch.io/" }
+      { "title": "Artfight Profile - Cndtnl_Cognition", "url": "https://artfight.net/~Cdtnl_Cognition" },
+      { "title": "YouTube Channel - @StorageUnitNo.199", "url": "https://www.youtube.com/@StorageUnitNo.199" },
+      { "title": "GitHub Profile - Conditional-Cognition", "url": "https://github.com/Conditional-Cognition" }
     ]
   },
   "credits": {
     "page": "credits"
   },
-  "anythingElse": "<p>Nothing here yet.</p>"
+  "anythingElse": "<p>Nothing here yet. For anything that doesnt fit in Other Sites or the Credits</p>"
 }
