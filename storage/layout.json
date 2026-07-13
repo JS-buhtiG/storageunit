@@ -8,6 +8,7 @@
   {
     "page": "credits",
     "shelf": 1,
-    "slot": 2
+    "slot": 2,
+    "texture": "cassete_drawer.png"
   }
 ]

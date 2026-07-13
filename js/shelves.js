@@ -1,5 +1,5 @@
 const BUTTONS_PER_SHELF = 6;
-const BOX_TEXTURES = ['cabinet_drawer.png'];
+const BOX_TEXTURES = ['cabinet_drawer.png', 'cassete_drawer.png'];
 
 const activeShelvesContainer = document.getElementById("active-shelves");
 const shelfSlider = document.getElementById("shelf-count");
@@ -56,7 +56,6 @@ function renderActiveShelves(count) {
 
             btn.onclick = () => {
                 // Optional: You could wrap this in an if(storageMap[key])
-                // so empty buttons don't play sounds, but I left it as is for now!
                 playCardboardSound();
                 handleShelfClick(shelfNum, slotNum);
             };
