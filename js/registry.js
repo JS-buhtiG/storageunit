@@ -53,6 +53,8 @@ async function buildDirectory(pageId, fetchPath) {
                     img.src = targetUrl;
                     if (entry.target === 'img.png') {
                         img.className = 'character_img';
+                        img.title = 'Open full image in a new tab';
+                        img.onclick = () => window.open(targetUrl, '_blank', 'noopener,noreferrer');
                     }
                     openWindow(entry.title, wrapWithBack(pageId, img));
                 } else if (/\.html$/i.test(entry.target)) {

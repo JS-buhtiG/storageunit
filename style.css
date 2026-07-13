@@ -424,8 +424,8 @@ html, body {
 
 .character_img {
     width: 630px;
+    cursor: pointer;
 }
-
 .timestamp {
     font-family: Consolas, ui-monospace;
 }
