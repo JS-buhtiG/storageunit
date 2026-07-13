@@ -64,7 +64,7 @@ function wireHudPanels() {
                 list.appendChild(p);
             } else {
                 links.forEach(link => {
-                    const a = document.createElement('a');
+                    const a = document.createElement('button');
                     a.href = link.url;
                     a.textContent = link.title;
                     a.target = '_blank';
