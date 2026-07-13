@@ -396,7 +396,9 @@ html, body {
 }
 
 .menu-button {
+    display: block;
     width: 100%;
+    box-sizing: border-box;
     padding: 18px 22px;
     margin-bottom: 12px;
 
