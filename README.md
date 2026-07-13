@@ -7,9 +7,5 @@ Cool thingo to store your shit in
 
 TODO
 - make a template
-- add sounds
-- ~~add configuration/settings file~~ → `settings.json` + `js/settings.js`
-- ~~add data files / support for data files~~ → `storage/layout.json`, per-page `order.json`, per-page `cabinet.json`
-- fill in real credits content (`storage/credits/about.html`)
-- fill in Blazier's personality write-up (`storage/artfight/blazier/info.html`)
-- populate `settings.json` → `links.otherSites` with real links
+- add more sounds
+- add more textures and entries
