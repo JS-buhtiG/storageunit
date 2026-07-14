@@ -1,11 +1,5 @@
 [
   {
-    "page": "artfight",
-    "shelf": 1,
-    "slot": 1,
-    "texture": "cabinet_drawer_artfight.png"
-  },
-  {
     "page": "credits",
     "shelf": 1,
     "slot": 6,

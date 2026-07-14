@@ -1,11 +1,5 @@
-# Storage Unit
+# Portfolio for 2<sup>nd</sup> ½ of 2026
 
-Cool thingo to store your shit in
-- Not secure whatsoever
-- Haha funny rollerdoor
-- IDK access your shit with ***style***
+Based off of Storage Unit by Conditional_Cognition
 
-TODO
-- make a template
-- add more sounds
-- add more textures and entries
+Display for my work this half of the year has produced.
