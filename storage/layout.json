@@ -1,5 +1,11 @@
 [
   {
+    "page": "10VCD02",
+    "shelf": 1,
+    "slot": 1,
+    "texture": "cabinet_drawer.png"
+  },
+  {
     "page": "credits",
     "shelf": 1,
     "slot": 6,
